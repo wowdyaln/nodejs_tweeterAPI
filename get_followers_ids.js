@@ -4,7 +4,7 @@ console.log("the post_bot is starting");
 
 
  var Twit = require('twit');
- var config = require('./config');
+ var config = require('./config/rorotest');
 //  console.log(config);
  var T = new Twit(config);
 //  console.log(T);

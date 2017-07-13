@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "json-mapper": "0.0.12",
     "jsonfile": "^3.0.1",
     "twit": "^2.2.9"
   }

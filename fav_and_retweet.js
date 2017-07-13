@@ -5,7 +5,7 @@
 console.log("the autoTweet_bot is starting");
 
  var Twit = require('twit');
- var config = require('./config');
+ var config = require('./config/rorotest');
 //  console.log(config);
  var T = new Twit(config);
 //  console.log(T);
@@ -17,15 +17,6 @@ var stream = T.stream('user')
 // console.log(stream);
 
 stream.on('favorite', retweet_fav);
-
-// function favs(err, data, response) {
-//     console.log("fav works");
-//     if (err) {
-//         console.log(err)
-//     } else {
-//         console.log(data);
-//     }
-// }
 
 function retweet_fav(data) {
     console.log("trigger the fav");

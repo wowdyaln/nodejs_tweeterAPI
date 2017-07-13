@@ -4,7 +4,7 @@ console.log("the post_bot is starting");
 
 
  var Twit = require('twit');
- var config = require('./config');
+ var config = require('./config/rorotest');
 //  console.log(config);
  var T = new Twit(config);
 //  console.log(T);
@@ -17,19 +17,21 @@ var params = {
  T.get('followers/list', params, getSomeone_follower);
 
  //https://www.npmjs.com/package/jsonfile
- var jsonfile = require('jsonfile')
- var file = "json/follower_list.json"
+ var jsonfile = require('jsonfile');
+ var file = "json/follower_list.json";
 
  function getSomeone_follower(err, data, response){
      if (err){
          console.log(err)
      } else {
-        console.log(data.users.length);
         jsonfile.writeFile(file, data, function (err) {
             console.error(err)
         });
+        console.log("got " + data.users.length + " users "
+            + " and save those to " + file);
      }
- }
+}
+ 
 
 
 

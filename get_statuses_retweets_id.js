@@ -3,7 +3,7 @@
  var Twit = require('twit');
 
  // 個人的 key, token 放在 config.js 檔案裡面
- var config = require('./config');
+ var config = require('./config/rorotest');
 //  console.log(config);
  var T = new Twit(config);
 //  console.log(T);
@@ -16,6 +16,7 @@ var params = {
              };
 
 T.post('statuses/retweet/:id', params, retweet)
+//https://dev.twitter.com/rest/reference/get/statuses/retweets/id
 
 function retweet(err, data, response) {
     if (err){
