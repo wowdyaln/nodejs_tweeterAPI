@@ -1,5 +1,5 @@
-//不知道能幹嘛的 api
-console.log("the post_bot is starting");
+//找到某個人的所有 list  ,把回傳的 json 資料儲存到 collections_list.json
+console.log("get someone's list objects");
 var Twit = require('twit');
 var config = require('./config/wowdy');
 //  console.log(config);
@@ -8,7 +8,7 @@ var T = new Twit(config);
 
 //https://www.npmjs.com/package/jsonfile
 var jsonfile = require('jsonfile');
-var file = "json/get_collections_list.json";
+var file = "json/get_lists_list.json";
 
 //是用疊加資料的方式。執行之前，確保 file 要是空的
 var fs = require('fs');
@@ -19,10 +19,9 @@ fs.truncate(file, 0, function () { console.log('done') });
 
 var params = {
     screen_name: 'MicWazowski',  // 要查詢的某個user
-    count: 200
 }
 // get the list of user id's that follow @xxxxx
-T.get('collections/list', params, getSomeone_follower);
+T.get('lists/list', params, getSomeone_follower);
 
 
 function getSomeone_follower(err, data, response) {
