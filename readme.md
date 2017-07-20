@@ -13,6 +13,12 @@ node copy_file.js
 node filter_Tweets_search.js
 ```
 
+# retrieve the data -> to a organized Json file
+### doing api method/ get data /clean the content from export file ->  
+###（刪除多餘的 \]\n\[ 符合正規格式）
+### 執行 copy ，寫入 temp 檔
+### 執行 filter 動作，過濾出需要的屬性
+
 ## 要爬出某個人的 timeline （最多3200 則）
 1.
 ```

@@ -19,9 +19,10 @@ console.log(b.users.length);
 
 
 var converter = JM.makeConverter({
-    "blocked_users": ['users', JM.map({
+    "users": ['users', JM.map({
         name: JM.helpers.templateStrong('{name}'),
-        href: JM.helpers.templateStrong('https://twitter.com/{screen_name}')
+        href: JM.helpers.templateStrong('https://twitter.com/{screen_name}'),
+        screen_name: JM.helpers.templateStrong('{screen_name}')
     })]
 });
 

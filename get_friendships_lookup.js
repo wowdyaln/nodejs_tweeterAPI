@@ -17,15 +17,21 @@ console.log("remove all content from " + file);
 fs.truncate(file, 0, function () { console.log('done') });
 //是用疊加資料的方式。執行之前，確保 file 要是空的
 
+var screen_name_list = require("./json/mapped_screen_name.json")
 
-//
-var params = {
-    screen_name: [
-        'MicWazowski',  
-        '_superorgasm_',
-        'Ken'
-    ]
-};
+// 用 array 放多個 user 名稱，手動輸入
+// var params = { screen_name: [
+//         'MicWazowski',  
+//         '_superorgasm_',
+//         'Ken'
+//     ]};
+// 用 array 放多個 user 名稱，手動輸入
+
+
+// 從 screen_name_list 匯入 (最多100個 user)
+var params = screen_name_list;
+// 從 screen_name_list 匯入
+
 // get the list of user id's that follow @xxxxx
 T.get('friendships/lookup', params, my_friendships);
 

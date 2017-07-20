@@ -1,4 +1,5 @@
 //找到某個人的所有 followers ，用 id呈現 ,把回傳的 json 資料儲存到 get_follower_listOrid.json
+// 這 api 好像沒什麼用
 console.log("the post_bot is starting");
 var Twit = require('twit');
 var config = require('./config/wowdy');
