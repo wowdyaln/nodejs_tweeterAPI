@@ -16,8 +16,6 @@ node filter_Tweets_search.js
 ## 要爬出某個人的 timeline （最多3200 則）
 1.
 ```
-注意！是用疊加資料的方式。執行之前，確保 get_someones_timeline.json 要是空的
-
 node get_statuses_usertimeline.js
 
 檔案中要調整的參數：
@@ -110,3 +108,7 @@ node filter_Users_block.js
 ```
 
 4. 最終成果在 filter_Users_you_block.json 裡面,使用 vscode 的自動 format 功能。 done!
+
+
+
+### get_collections_list 沒什麼用處，沒什麼人會建立 collections 的樣子

@@ -10,18 +10,23 @@ var config = require('./config/wowdy');
 var T = new Twit(config);
 //  console.log(T);
 
+var file = "./json/get_someones_timeline.json"
+//https://www.npmjs.com/package/jsonfile
+//https://github.com/jprichardson/node-jsonfile
+var jsonfile = require('jsonfile')
+
+//是用疊加資料的方式。執行之前，確保 file 要是空的
+var fs = require('fs');
+console.log("remove all content from " + file);
+fs.truncate(file, 0, function () { console.log('done') });
+//是用疊加資料的方式。執行之前，確保 file 要是空的
+
 var params = {
     screen_name: 'wowdyaln', //要搜尋的某 user
     count: 200,
     // max_id: 863970619129331716, //一般而言省略。依據情況調整
     include_entities: false
-}
-
-var file = "./json/get_someones_timeline.json"
-
-//https://www.npmjs.com/package/jsonfile
-//https://github.com/jprichardson/node-jsonfile
-var jsonfile = require('jsonfile')
+};
 
 function getSomeone_timeline(err, data, response) {
     if (err) {
@@ -30,8 +35,8 @@ function getSomeone_timeline(err, data, response) {
         jsonfile.writeFile(file, data, { flag: 'a' }, function (err) {
             console.error(err);
         });
-        console.log("got " + data.length + " tweets from " + params.screen_name 
-        + "'s timeline and save to " + file);
+        console.log("got " + data.length + " tweets from " + params.screen_name
+            + "'s timeline and save to " + file);
         return update_max_id(data);
     }
 }
