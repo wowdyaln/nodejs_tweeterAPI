@@ -4,9 +4,8 @@ var jsonfile = require('jsonfile')
 var JM = require('json-mapper');
 //https://github.com/dregenor/jsonMapper#shut-up-and-show-me-a-simple-convertion
 
-
-var import_from = "json/temp2.json"
-var export_to = "json/filter_Tweets_fav.json"
+var import_from = "json/temp4.json"
+var export_to = "json/filter_Tweets_timeline.json"
 
 var b = require("./"+import_from)
             // 注意！ require 檔案進node.js 相對路徑要寫完整不要省略了

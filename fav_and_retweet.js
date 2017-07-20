@@ -5,7 +5,8 @@
 console.log("the autoTweet_bot is starting");
 
  var Twit = require('twit');
- var config = require('./config/rorotest');
+ // https://github.com/ttezel/twit
+ var config = require('./config/wowdy');
 //  console.log(config);
  var T = new Twit(config);
 //  console.log(T);

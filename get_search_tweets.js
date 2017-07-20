@@ -5,7 +5,7 @@
 console.log("the bot is starting");
 
  var Twit = require('twit');
- var config = require('./config/rorotest');
+ var config = require('./config/wowdy');
 //  console.log(config);
  var T = new Twit(config);
 //  console.log(T);
