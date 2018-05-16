@@ -1,4 +1,4 @@
-// 把 temp1.json 的資料，過濾之後，傳到 filter_fav_tweets.json
+// 把 temp1.json 的資料，過濾之後，傳到 filter_Tweets_fav.json
 
 var jsonfile = require('jsonfile')
 var JM = require('json-mapper');

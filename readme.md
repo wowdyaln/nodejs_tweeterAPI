@@ -1,6 +1,3 @@
-## 某篇特定 tweet
-https://twitter.com/statuses/id_str
-
 
 ## 關鍵字搜尋
 - command
@@ -13,13 +10,13 @@ node copy_file.js
 node filter_Tweets_search.js
 ```
 
-# retrieve the data -> to a organized Json file
-### doing api method/ get data /clean the content from export file ->  
-###（刪除多餘的 \]\n\[ 符合正規格式）
-### 執行 copy ，寫入 temp 檔
-### 執行 filter 動作，過濾出需要的屬性
+1. retrieve the data -> to a organized Json file
+1.  doing api method/ get data /clean the content from export file ->  
+1. （刪除多餘的 \]\n\[ 符合正規格式）
+1. 執行 copy ，寫入 temp 檔
+1. 執行 filter 動作，過濾出需要的屬性
 
-## 要爬出某個人的 timeline （最多3200 則）
+#### 要爬出某個人的 timeline （最多3200 則）
 1.
 ```
 node get_statuses_usertimeline.js
@@ -30,7 +27,7 @@ node get_statuses_usertimeline.js
 
 ```
 
-### append data 到 json 檔案後，中間有多餘中括號的問題
+#### append data 到 json 檔案後，中間有多餘中括號的問題
 2. 
 打開 `get_someones_timeline.json`
 使用 vscode 搜尋功能，在 regex 模式，搜尋框中輸入
@@ -51,7 +48,7 @@ node filter_Tweets_timeline.js
 
 
 
-## 要爬出某個人的 fav （最多3200 則）
+#### 要爬出某個人的 fav （最多3200 則）
 1.
 ```
 注意！是用疊加資料的方式。執行之前，確保 get_favorites_list.json 要是空的
@@ -64,7 +61,7 @@ node get_favorites_list.js
 
 ```
 
-### append data 到 json 檔案後，中間有多餘中括號的問題
+#### append data 到 json 檔案後，中間有多餘中括號的問題
 2. 
 打開 `get_favorites_list.json`
 使用 vscode 搜尋功能，在 regex 模式，搜尋框中輸入
@@ -81,11 +78,11 @@ node copy_file.js
 node filter_Tweets_fav.js
 ```
 
-5. 最終成果在 filter_fav_tweets.json 裡面,使用 vscode 的自動 format 功能。 done! enjoy!
+5. 最終成果在 filter_Tweets_fav.json 裡面,使用 vscode 的自動 format 功能。 done! enjoy!
 
  
 
-## 找出某個人的 followers
+#### 找出某個人的 followers
 - command
 ```
 node get_favorites_list.js
@@ -97,7 +94,7 @@ node filter_Tweets_fav.js
 
 
 
-## 找出自己的 block 名單
+#### 找出自己的 block 名單
 - command
 1. 
 ```
@@ -113,8 +110,4 @@ node copy_file.js
 node filter_Users_block.js
 ```
 
-4. 最終成果在 filter_Users_you_block.json 裡面,使用 vscode 的自動 format 功能。 done!
-
-
-
-### get_collections_list 沒什麼用處，沒什麼人會建立 collections 的樣子
+4. 最終成果在 filter_Users_you_block.json 裡面,使用 vscode 的自動 format 功能。 

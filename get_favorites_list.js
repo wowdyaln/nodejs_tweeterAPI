@@ -25,7 +25,7 @@ fs.truncate(file, 0, function () { console.log('done') });
 
 
 var params = {
-    screen_name: 'MicWazowski', //要搜尋的某 user
+    screen_name: 'poppyzozo', //要搜尋的某 user
     count: 200,
     // max_id: 863970619129331716, //一般而言省略。依據情況調整
     include_entities: false
@@ -55,8 +55,8 @@ function update_max_id(data) {
     setTimeout(function () {
         T.get('favorites/list', params, getSomeone_fav); // get the favs tweets of from someone
         i++
-        if (i < 2) myLoop(i);  //更改此行： i < 要發幾次 request, i * 200 篇 tweet
-    }, 3000)
+        if (i < 21) myLoop(i);  //更改此行： i < 要發幾次 request, i * 200 篇 tweet
+    }, 2000)
 })(0);
 
 // 3200/200 = 16
